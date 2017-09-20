@@ -1,4 +1,5 @@
-﻿using MyApp.Domain;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using MyApp.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,19 +9,23 @@ using System.Threading.Tasks;
 
 namespace Repository.EntityFramework
 {
-    // Context to use when to SimpleAuthentication is used
-    //public class MyAppContext : DbContext
-    //{
-    //    public MyAppContext() : base("MyAppDBConnectionString")
-    //    {
-    //    }
+    public class MyAppContext : IdentityDbContext<ApplicationUser>
+    {
+        public MyAppContext() : base("MyAppDBConnectionString", throwIfV1Schema: false)
+        {
+        }
 
-    //    public DbSet<Student> Students { get; set; }
-    //    public DbSet<Standard> Standards { get; set; }
+        public static MyAppContext Create()
+        {
+            return new MyAppContext();
+        }
 
-    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    //    {
-    //        base.OnModelCreating(modelBuilder);
-    //    }
-    //}
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Standard> Standards { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+    }
 }

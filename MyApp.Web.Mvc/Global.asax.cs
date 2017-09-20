@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Castle.Windsor.Installer;
+using Castle.Windsor;
+using MyApp.Web.Mvc.Plumbing;
 
 namespace MyApp.Web.Mvc
 {
@@ -16,6 +19,22 @@ namespace MyApp.Web.Mvc
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            BootstrapContainer();
         }
+
+        protected void Application_End()
+        {
+            container.Dispose();
+        }
+
+        private static void BootstrapContainer()
+        {
+            container = new WindsorContainer()
+                .Install(FromAssembly.This());
+            var controllerFactory = new WindsorControllerFactory(container.Kernel);
+            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+        }
+
+        private static IWindsorContainer container;
     }
 }

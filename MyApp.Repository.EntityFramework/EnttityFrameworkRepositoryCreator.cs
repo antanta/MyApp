@@ -1,5 +1,4 @@
-﻿using MyApp.Web.Mvc.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,12 +12,12 @@ namespace Repository.EntityFramework
         public Repository<T> GetRepository<T>()
             where T : class
         {
-            DbContext d = new ApplicationDbContext();
+            DbContext d = new MyAppContext();
 
-            ApplicationDbContext tt = new ApplicationDbContext();
+            MyAppContext tt = new MyAppContext();
 
             //Entity Framework
-            var repository = new EFRepository<ApplicationDbContext, T>(new Func<ApplicationDbContext, DbSet<T>>(ContextSetSelector<T>));
+            var repository = new EFRepository<MyAppContext, T>(new Func<MyAppContext, DbSet<T>>(ContextSetSelector<T>));
 
             //Original way Entity Framework
             //EFRepository<MyContext, Student, int> repository = new EFRepository<MyContext, Student, int>(x => x.Students);
@@ -26,7 +25,7 @@ namespace Repository.EntityFramework
             return repository;
         }
 
-        static DbSet<TValue> ContextSetSelector<TValue>(ApplicationDbContext context)
+        static DbSet<TValue> ContextSetSelector<TValue>(MyAppContext context)
             where TValue : class
         {
             /* Could be done with a switch to skip Reflection */

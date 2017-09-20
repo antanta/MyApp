@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyApp.Repository.EntityFramework
+namespace Repository
 {
-    public class Class1
+    public interface IRepositoryIntegerKey<TValue> : IRepository<TValue, int>
+        where TValue: class
     {
     }
 }

@@ -53,6 +53,16 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj">
+      <Project>{d2b2f6a5-e2a5-4a06-8a34-40a430f48878}</Project>
+      <Name>MyApp.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyApp.Repository\MyApp.Repository.csproj">
+      <Project>{f7de1030-0914-4be7-9c49-165a9c11d1e0}</Project>
+      <Name>MyApp.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

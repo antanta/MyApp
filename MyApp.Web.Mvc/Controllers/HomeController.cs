@@ -1,6 +1,6 @@
 ﻿using MyApp.Domain;
-using MyApp.Web.Mvc.EF;
 using MyApp.Web.Mvc.Models;
+using Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,25 +11,20 @@ namespace MyApp.Web.Mvc.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(IRepositoryCreator repoCreator)
+        {
+            this.repoCreator = repoCreator;
+        }
+
         public ActionResult Index()
         {
-            using (var ctx = new ApplicationDbContext())
+            Repository<Standard> repository = repoCreator.GetRepository<Standard>();
+            Standard st = new Standard
             {
-                Standard st = new Standard();
-
-                st.Name = "12 Standard 1";
-
-
-                Student stud = new Student() { Name = "New Student 2" };
-                stud.Standard = st;
-
-                ctx.Standards.Add(st);
-
-                ctx.Students.Add(stud);
-
-                ctx.SaveChanges();
-            }
-
+                Name = "12 Standard 1"
+            };
+            repository.Insert(st);
+            repository.SaveChanges();
 
             return View();
         }
@@ -47,5 +42,7 @@ namespace MyApp.Web.Mvc.Controllers
 
             return View();
         }
+
+        private readonly IRepositoryCreator repoCreator;
     }
 }

@@ -32,10 +32,8 @@ namespace MyApp.Web.Mvc.Models
             return new ApplicationDbContext();
         }
 
-
         public DbSet<Student> Students { get; set; }
         public DbSet<Standard> Standards { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

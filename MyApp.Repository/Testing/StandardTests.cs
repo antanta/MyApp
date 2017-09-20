@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 
-namespace Repository.Testing
+namespace MyApp.Repository.Testing
 {
     public static class StandardTests
     {

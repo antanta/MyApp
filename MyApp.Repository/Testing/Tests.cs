@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Repository.Testing
+namespace MyApp.Repository.Testing
 {
         internal class InMemoryRepositoryTests
         {

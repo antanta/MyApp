@@ -6,9 +6,9 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using KellermanSoftware.CompareNetObjects;
-using Repository.ChangeTracking;
+using MyApp.Repository.ChangeTracking;
 
-namespace Repository
+namespace MyApp.Repository
 {
     public class ObjectContext<T>
     {

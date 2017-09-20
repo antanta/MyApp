@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Repository.Serialization
+namespace MyApp.Repository.Serialization
 {
     public class JsonSerializer<T> : ISerializer<T>
     {

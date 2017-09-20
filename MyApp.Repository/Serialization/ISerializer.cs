@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 
-namespace Repository.Serialization
+namespace MyApp.Repository.Serialization
 {
     public interface ISerializer<T>
     {

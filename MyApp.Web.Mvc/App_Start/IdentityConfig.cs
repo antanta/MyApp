@@ -11,7 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using MyApp.Web.Mvc.Models;
-using Repository.EntityFramework;
+using MyApp.Repository.EntityFramework;
+using MyApp.Domain;
 
 namespace MyApp.Web.Mvc
 {

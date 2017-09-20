@@ -18,6 +18,8 @@ namespace MyApp.Domain
         
         public IList<Student> Students { get; set; }
 
+        public int? MaxNumberOfStudents { get; set; }
+
         //public int ClassTeacherId { get; set; }
 
         //[ForeignKey("ClassTeacherId")]

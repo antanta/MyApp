@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Repository.ChangeTracking;
+using MyApp.Repository.ChangeTracking;
 
-namespace Repository
+namespace MyApp.Repository
 {
     public abstract class Repository<T> : IDisposable
     {

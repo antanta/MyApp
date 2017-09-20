@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Repository.ChangeTracking
+namespace MyApp.Repository.ChangeTracking
 {
     public class CallbackEnumerator<T> : IEnumerator<T>
     {

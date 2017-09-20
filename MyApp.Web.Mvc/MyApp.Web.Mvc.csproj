@@ -195,7 +195,6 @@
     </Compile>
     <Compile Include="Installers\ControllersInstaller.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Plumbing\WindsorControllerFactory .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

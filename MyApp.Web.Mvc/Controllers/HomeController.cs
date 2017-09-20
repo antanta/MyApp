@@ -1,6 +1,6 @@
 ﻿using MyApp.Domain;
 using MyApp.Web.Mvc.Models;
-using Repository;
+using MyApp.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace MyApp.Web.Mvc.Controllers
             Repository<Standard> repository = repoCreator.GetRepository<Standard>();
             Standard st = new Standard
             {
-                Name = "12 Standard 1"
+                Name = "12 Standard"
             };
             repository.Insert(st);
             repository.SaveChanges();

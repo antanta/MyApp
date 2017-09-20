@@ -6,7 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using MyApp.Web.Mvc.Models;
-using Repository.EntityFramework;
+using MyApp.Repository.EntityFramework;
+using MyApp.Domain;
 
 namespace MyApp.Web.Mvc
 {

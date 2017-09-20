@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using MyApp.Web.Mvc.Models;
+using MyApp.Domain;
 
 namespace MyApp.Web.Mvc.Controllers
 {

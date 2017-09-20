@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KellermanSoftware.CompareNetObjects;
 
-namespace Repository.ChangeTracking
+namespace MyApp.Repository.ChangeTracking
 {
     internal class ChangeTracker<T>
     {

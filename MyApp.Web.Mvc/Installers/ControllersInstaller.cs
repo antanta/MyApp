@@ -2,8 +2,8 @@
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using Repository;
-using Repository.EntityFramework;
+using MyApp.Repository;
+using MyApp.Repository.EntityFramework;
 
 namespace MyApp.Web.Mvc.Installers
 {

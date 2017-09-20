@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
-namespace Repository.EntityFramework
+namespace MyApp.Repository.EntityFramework
 {
     public class EFRepository<TContext, TValue> : Repository<TValue> where TValue : class where TContext : DbContext
     {

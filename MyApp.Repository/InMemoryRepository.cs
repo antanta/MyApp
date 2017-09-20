@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using NUnit.Framework;
 
-namespace Repository
+namespace MyApp.Repository
 {
     internal class InMemoryInsert<TValue> : Insert<TValue>
     {

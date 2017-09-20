@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using Microsoft.Samples.EntityDataReader;
 using NUnit.Framework;
 
-namespace Repository.EntityFramework
+namespace MyApp.Repository.EntityFramework
 {
     // Taken from http://www.codeproject.com/Articles/350135/Entity-Framework-Get-mapped-table-name-from-an-ent
     public static class ContextExtensions

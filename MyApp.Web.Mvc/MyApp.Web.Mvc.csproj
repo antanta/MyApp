@@ -270,6 +270,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\_references.js" />
     <Content Include="Styles\app.component.css" />
+    <Content Include="Styles\Components\bar.component.css" />
     <Content Include="Templates\app.component.html" />
     <Content Include="Templates\Components\bar.component.html" />
     <Content Include="Web.config" />

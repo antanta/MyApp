@@ -1,0 +1,7 @@
+﻿bar-component .ui-progressbar .ui-progressbar-label {
+    margin-top: -10px;
+}
+
+bar-component .ui-growl {
+    top: 70px;
+}

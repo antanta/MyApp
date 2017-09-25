@@ -1,11 +1,13 @@
 ﻿/// <reference path ="../../Scripts/typings/jquery/jquery.d.ts"/> 
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Message } from 'primeng/components/common/api';
 
 @Component({
     selector: 'bar-component',
-    templateUrl: '../Templates/Components/bar.component.html'
+    templateUrl: '../Templates/Components/bar.component.html',
+    styleUrls: ['../Styles/Components/bar.component.css'],
+    encapsulation: ViewEncapsulation.None
 })
 export class BarComponent {
 
@@ -21,7 +23,7 @@ export class BarComponent {
                 this.msgs = [{ severity: 'info', summary: 'Success', detail: 'Process Completed' }];
                 clearInterval(interval);
             }
-        }, 2000);
+        }, 500);
     }
 
 }

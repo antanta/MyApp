@@ -21,12 +21,14 @@ var BarComponent = /** @class */ (function () {
                 _this.msgs = [{ severity: 'info', summary: 'Success', detail: 'Process Completed' }];
                 clearInterval(interval);
             }
-        }, 2000);
+        }, 500);
     };
     BarComponent = __decorate([
         core_1.Component({
             selector: 'bar-component',
-            templateUrl: '../Templates/Components/bar.component.html'
+            templateUrl: '../Templates/Components/bar.component.html',
+            styleUrls: ['../Styles/Components/bar.component.css'],
+            encapsulation: core_1.ViewEncapsulation.None
         })
     ], BarComponent);
     return BarComponent;

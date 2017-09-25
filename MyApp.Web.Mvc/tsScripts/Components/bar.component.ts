@@ -1,4 +1,5 @@
-﻿//import { ProgressBarModule } from 'primeng/primeng'
+﻿/// <reference path ="../../Scripts/typings/jquery/jquery.d.ts"/> 
+
 import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/components/common/api';
 
@@ -11,6 +12,23 @@ export class BarComponent {
     value: number = 0;
 
     msgs: Message[];
+
+    constructor() {
+        debugger;
+
+        $.ajax({
+            url: 'http://localhost:62901/api/student', //different domain
+            dataType: 'jsonp',
+            type: 'GET',
+            crossDomain: true,
+            success: function (data) {
+                alert('success:' + data);
+            },
+            error: function (jqXHR, status, error) {
+                alert('error');
+            }
+        });
+    }
 
     ngOnInit() {
         let interval = setInterval(() => {

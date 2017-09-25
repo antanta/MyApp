@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Repository", "MyApp.R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.Repository.EntityFramework", "MyApp.Repository.EntityFramework\MyApp.Repository.EntityFramework.csproj", "{67384DF5-E45F-4C61-805A-86CCC786D783}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyApp.WebAPI", "MyApp.WebAPI\MyApp.WebAPI.csproj", "{57E1CD12-750A-49AE-BDF0-785B96C40BF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{67384DF5-E45F-4C61-805A-86CCC786D783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67384DF5-E45F-4C61-805A-86CCC786D783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67384DF5-E45F-4C61-805A-86CCC786D783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E1CD12-750A-49AE-BDF0-785B96C40BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E1CD12-750A-49AE-BDF0-785B96C40BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E1CD12-750A-49AE-BDF0-785B96C40BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E1CD12-750A-49AE-BDF0-785B96C40BF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@ using MyApp.Repository.EntityFramework;
 
 namespace MyApp.Web.Mvc.Installers
 {
-    public class ControllersInstaller : IWindsorInstaller
+    public class DependencyConventions : IWindsorInstaller
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {

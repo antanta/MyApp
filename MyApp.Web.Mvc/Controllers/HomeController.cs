@@ -11,21 +11,8 @@ namespace MyApp.Web.Mvc.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController(IRepositoryCreator repoCreator)
-        {
-            this.repoCreator = repoCreator;
-        }
-
         public ActionResult Index()
         {
-            Repository<Standard> repository = repoCreator.GetRepository<Standard>();
-            Standard st = new Standard
-            {
-                Name = "12 Standard"
-            };
-            repository.Insert(st);
-            repository.SaveChanges();
-
             return View();
         }
 
@@ -42,7 +29,5 @@ namespace MyApp.Web.Mvc.Controllers
 
             return View();
         }
-
-        private readonly IRepositoryCreator repoCreator;
     }
 }

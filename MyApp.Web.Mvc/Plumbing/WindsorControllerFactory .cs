@@ -22,11 +22,14 @@ namespace MyApp.Web.Mvc.Plumbing
 
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
-            if (controllerType == null)
+            if (controllerType != null)
             {
-                throw new HttpException(404, string.Format("The controller for path '{0}' could not be found.", requestContext.HttpContext.Request.Path));
+                return (IController)kernel.Resolve(controllerType);
             }
-            return (IController)kernel.Resolve(controllerType);
+            else
+            {
+                return base.GetControllerInstance(requestContext, controllerType);
+            }
         }
     }
 }

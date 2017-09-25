@@ -10,25 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var StandardReaderService_1 = require("../Services/StandardReaderService");
 var GridComponent = /** @class */ (function () {
-    function GridComponent() {
+    function GridComponent(standardReaderService) {
+        this.standardReaderService = standardReaderService;
         this.standards = [];
+        /* The parameter simultaneously defines a private standardReaderService property and identifies it as a StandardReaderService injection site */
     }
     GridComponent.prototype.ngOnInit = function () {
-        var that = this;
-        $.ajax({
-            url: 'http://localhost:62901/api/standard',
-            dataType: 'jsonp',
-            type: 'GET',
-            crossDomain: true,
-            success: function (data) {
-                that.standards = data;
-            },
-            error: function (jqXHR, status, error) {
-                alert('error');
-            }
-        });
-        //this.carService.getCarsLarge().then(standards => this.standards = standards);
+        var _this = this;
+        this.standardReaderService
+            .getStandards()
+            .then(function (standards) { return _this.standards = standards; });
     };
     GridComponent = __decorate([
         core_1.Component({
@@ -37,7 +30,7 @@ var GridComponent = /** @class */ (function () {
             styleUrls: ['../Styles/Components/grid.component.css'],
             encapsulation: core_1.ViewEncapsulation.None
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [StandardReaderService_1.StandardReaderService])
     ], GridComponent);
     return GridComponent;
 }());

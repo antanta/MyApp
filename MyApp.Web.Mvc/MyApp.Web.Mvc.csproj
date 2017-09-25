@@ -338,7 +338,9 @@
     <TypeScriptCompile Include="tsScripts\app.module.ts" />
     <TypeScriptCompile Include="tsScripts\Components\bar.component.ts" />
     <TypeScriptCompile Include="tsScripts\Components\grid.component.ts" />
+    <TypeScriptCompile Include="tsScripts\Domain\standard.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
+    <TypeScriptCompile Include="tsScripts\Services\StandardReaderService.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

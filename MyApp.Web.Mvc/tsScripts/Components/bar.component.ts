@@ -9,7 +9,7 @@ import { Message } from 'primeng/components/common/api';
     styleUrls: ['../Styles/Components/bar.component.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class BarComponent {
+export class BarComponent implements OnInit {
 
     value: number = 0;
 

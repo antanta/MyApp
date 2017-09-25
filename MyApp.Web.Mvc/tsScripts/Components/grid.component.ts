@@ -1,10 +1,6 @@
 ﻿import { OnInit, Component, ViewEncapsulation } from '@angular/core';
-
-export interface Standard {
-    Id: number;
-    Name: string;
-    brand?: string;
-}
+import { Standard } from '../Domain/standard'
+import { StandardReaderService } from '../Services/StandardReaderService'
 
 @Component({
     selector: 'grid-component',
@@ -15,25 +11,13 @@ export interface Standard {
 export class GridComponent implements OnInit {
     standards: Standard[] = [];
 
-    constructor() {//TODO insert service to read data
-        
+    constructor(private standardReaderService: StandardReaderService) {//TODO insert service to read data
+        /* The parameter simultaneously defines a private standardReaderService property and identifies it as a StandardReaderService injection site */
     }
 
     ngOnInit() {
-        var that = this;
-
-        $.ajax({
-            url: 'http://localhost:62901/api/standard', //different domain
-            dataType: 'jsonp',
-            type: 'GET',
-            crossDomain: true,
-            success: function (data) {
-                that.standards = data as Standard[];
-            },
-            error: function (jqXHR, status, error) {
-                alert('error');
-            }
-        });
-        //this.carService.getCarsLarge().then(standards => this.standards = standards);
+        this.standardReaderService
+            .getStandards()
+            .then(standards => this.standards = standards);
     }
 }

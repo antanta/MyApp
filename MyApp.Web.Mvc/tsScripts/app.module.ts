@@ -4,10 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule, ButtonModule, ProgressBarModule, GrowlModule, DataGridModule } from 'primeng/primeng';
+import { JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BarComponent } from './Components/bar.component';
 import { GridComponent } from './Components/grid.component';
+
+import { StandardReaderService } from './Services/StandardReaderService'
 
 @NgModule({
     declarations: [
@@ -16,19 +19,22 @@ import { GridComponent } from './Components/grid.component';
         GridComponent
     ],
     imports: [
-      /* Angular modules */
-      BrowserModule,
-      BrowserAnimationsModule,
-      FormsModule,
+        /* Angular modules */
+        BrowserModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        JsonpModule,
 
-      /* Primeng modules */
-      InputTextModule,
-      ButtonModule,
-      ProgressBarModule,
-      GrowlModule,
-      DataGridModule
-  ],
-  providers: [],
-  bootstrap:    [ AppComponent ]
+        /* Primeng modules */
+        InputTextModule,
+        ButtonModule,
+        ProgressBarModule,
+        GrowlModule,
+        DataGridModule
+    ],
+    providers: [
+        StandardReaderService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

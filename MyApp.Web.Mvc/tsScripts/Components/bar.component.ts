@@ -13,23 +13,6 @@ export class BarComponent {
 
     msgs: Message[];
 
-    constructor() {
-        debugger;
-
-        $.ajax({
-            url: 'http://localhost:62901/api/student', //different domain
-            dataType: 'jsonp',
-            type: 'GET',
-            crossDomain: true,
-            success: function (data) {
-                alert('success:' + data);
-            },
-            error: function (jqXHR, status, error) {
-                alert('error');
-            }
-        });
-    }
-
     ngOnInit() {
         let interval = setInterval(() => {
             this.value = this.value + Math.floor(Math.random() * 10) + 1;

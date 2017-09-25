@@ -1,0 +1,17 @@
+﻿/* 
+	ViewEncapsulation.None - valid for all dom elements.
+	Use component selector to distinguish: grid-component
+*/
+
+grid-component .ui-datagrid .ui-datagrid-header {
+	text-align: left;
+}
+
+grid-component .ui-datagrid .ui-datagrid-content {
+	height: 198px;
+}
+
+grid-component h3 {
+    font-weight: bold;
+    font-style: italic;
+}

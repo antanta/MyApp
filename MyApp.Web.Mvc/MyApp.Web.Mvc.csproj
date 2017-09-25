@@ -307,10 +307,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="tsScripts\tsconfig.json" />
+    <Content Include="Styles\Components\grid.component.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Styles\Components\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj">
@@ -332,9 +332,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <Content Include="Templates\Components\grid.component.html" />
     <TypeScriptCompile Include="tsScripts\app.component.ts" />
     <TypeScriptCompile Include="tsScripts\app.module.ts" />
     <TypeScriptCompile Include="tsScripts\Components\bar.component.ts" />
+    <TypeScriptCompile Include="tsScripts\Components\grid.component.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
   </ItemGroup>
   <ItemGroup>

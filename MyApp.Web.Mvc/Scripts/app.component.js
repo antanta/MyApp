@@ -10,19 +10,17 @@ var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'ASP.NET MVC 5 with Angular 4';
-        this.skills = ['MVC 5', 'Angular 2', 'TypeScript', 'Visual Studio 2015'];
-        this.myskills = this.skills[3];
     }
+    AppComponent.prototype.onClick = function () {
+        this.message = 'Hello ' + this.name;
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            //template: '<h1>Hello {{title}}</h1>',
             templateUrl: '../Templates/app.component.html',
-            //styles: ['h2 {color: red}'],
             styleUrls: ['../Styles/app.component.css']
         })
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map

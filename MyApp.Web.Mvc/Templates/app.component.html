@@ -1,8 +1,9 @@
 ﻿<h1>Hello {{title}}</h1>
-<h2>My favorite skill is: {{myskills}}</h2>
-<p>Skill:</p>
-<ul>
-    <li *ngFor="let skl of skills; let i = index">
-        {{i + 1}}. {{ skl }}
-    </li>
-</ul>
+
+<input type="text" [(ngModel)]="name" pInputText>
+
+<button type="button" pButton label="Click" icon="fa fa-check" (click)="onClick($event)"></button>
+
+<div>{{message}}</div>
+
+<bar-component></bar-component>

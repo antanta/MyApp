@@ -91,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\connections.config">
+      <Link>connections.config</Link>
+    </Content>
     <None Include="App.config" />
     <None Include="MyApp.Repository.EntityFramework.nuspec" />
     <None Include="packages.config" />
@@ -121,4 +124,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <Copy SourceFiles="%(Content.Identity)" DestinationFiles="%(Content.Link)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Condition="'%(Content.Link)' != ''" />
+  </Target>
 </Project>

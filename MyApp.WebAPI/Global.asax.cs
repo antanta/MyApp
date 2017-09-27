@@ -31,7 +31,7 @@ namespace MyApp.WebAPI
 
             GlobalConfiguration.Configuration.Services.Replace(typeof(IHttpControllerActivator), new WindsorCompositionRoot(this.container));
 
-            /* Add support for jsonp */
+            // Add support for jsonp
             GlobalConfiguration.Configuration.Formatters.Insert(0, new JsonpMediaTypeFormatter(new JsonMediaTypeFormatter()));
         }
 

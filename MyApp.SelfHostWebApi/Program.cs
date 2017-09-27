@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin.Hosting;
+using MyApp.SelfHostWebApi.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,18 +13,13 @@ namespace MyApp.SelfHostWebApi
     {
         static void Main(string[] args)
         {
-            string baseAddress = "http://localhost:9000/";
+            HostConfiguration hostConfig = HostConfiguration.GetConfig();
+            string baseAddress = hostConfig.HostEndpoint.BaseAddress;
 
-            // Start OWIN host 
+            // Start OWIN host
             using (WebApp.Start<Startup>(url: baseAddress))
             {
-                // Create HttpCient and make a request to api/values 
-                HttpClient client = new HttpClient();
-
-                var response = client.GetAsync(baseAddress + "api/test").Result;
-
-                Console.WriteLine(response);
-                Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+                Console.WriteLine("Started listening on port {0}.{1}Press Enter to quit.", baseAddress, Environment.NewLine);
                 Console.ReadLine();
             }
         }

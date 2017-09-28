@@ -13,6 +13,7 @@ namespace MyApp.Web.Mvc
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        #region Protected members
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -26,7 +27,9 @@ namespace MyApp.Web.Mvc
         {
             container.Dispose();
         }
+        #endregion
 
+        #region Private members
         private static void BootstrapContainer()
         {
             container = new WindsorContainer()
@@ -36,5 +39,6 @@ namespace MyApp.Web.Mvc
         }
 
         private static IWindsorContainer container;
+        #endregion
     }
 }

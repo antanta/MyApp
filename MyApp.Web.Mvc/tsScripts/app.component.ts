@@ -11,5 +11,20 @@ export class AppComponent {
     message: string;
     onClick() {
         this.message = 'Hello ' + this.name;
+        debugger;
+        $.ajax({
+            url: 'http://localhost:9000/api/randomfilegenerator/GenerateRandomFiles', //different domain
+            dataType: 'jsonp',
+            type: 'GET',
+            crossDomain: true,
+            success: function (data) {
+                debugger;
+            },
+            error: function (jqXHR, status, error) {
+                debugger;
+            }
+        });
+
+
     }
 }

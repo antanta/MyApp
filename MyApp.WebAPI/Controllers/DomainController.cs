@@ -17,22 +17,22 @@ namespace MyApp.WebAPI.Controllers
             this.DomainRepository = repoCreator.GetRepository<T>();
         }
 
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             var result = this.DomainRepository.Items;
             return result;
         }
-        public string Get(int id)
+        public virtual string Get(int id)
         {
             return "value";
         }
-        public void Post([FromBody]string value)
+        public virtual void Post([FromBody]string value)
         {
         }
-        public void Put(int id, [FromBody]string value)
+        public virtual void Put(int id, [FromBody]string value)
         {
         }
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
         }
 

@@ -39,8 +39,10 @@ namespace MyApp.WebAPI
         {
             this.container.Dispose();
             base.Dispose();
-        }        
+        }
 
+        #region Private members
         private readonly IWindsorContainer container;
+        #endregion
     }
 }

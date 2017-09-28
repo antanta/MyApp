@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dispatcher;
 
-namespace MyApp.WebAPI.Plumbing
+namespace MyApp.SelfHostWebApi.Plumbing
 {
     public class WindsorCompositionRoot : IHttpControllerActivator
     {

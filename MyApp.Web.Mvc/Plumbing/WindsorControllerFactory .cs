@@ -8,8 +8,6 @@ namespace MyApp.Web.Mvc.Plumbing
 {
     public class WindsorControllerFactory : DefaultControllerFactory
     {
-        private readonly IKernel kernel;
-
         public WindsorControllerFactory(IKernel kernel)
         {
             this.kernel = kernel;
@@ -20,6 +18,7 @@ namespace MyApp.Web.Mvc.Plumbing
             kernel.ReleaseComponent(controller);
         }
 
+        #region Protected members
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
             if (controllerType != null)
@@ -31,5 +30,10 @@ namespace MyApp.Web.Mvc.Plumbing
                 return base.GetControllerInstance(requestContext, controllerType);
             }
         }
+        #endregion
+
+        #region Private members
+        private readonly IKernel kernel;
+        #endregion
     }
 }

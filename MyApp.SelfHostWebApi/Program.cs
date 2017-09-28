@@ -19,6 +19,15 @@ namespace MyApp.SelfHostWebApi
             // Start OWIN host
             using (WebApp.Start<Startup>(url: baseAddress))
             {
+                HttpClient client = new HttpClient();
+
+                var response = client.GetAsync(baseAddress + "api/randomfilegenerator").Result;
+
+                Console.WriteLine(response);
+                Console.WriteLine(response.Content.ReadAsStringAsync().Result);
+                Console.ReadLine();
+
+
                 Console.WriteLine("Started listening on port {0}.{1}Press Enter to quit.", baseAddress, Environment.NewLine);
                 Console.ReadLine();
             }

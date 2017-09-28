@@ -13,6 +13,19 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.onClick = function () {
         this.message = 'Hello ' + this.name;
+        debugger;
+        $.ajax({
+            url: 'http://localhost:9000/api/randomfilegenerator/GenerateRandomFiles',
+            dataType: 'jsonp',
+            type: 'GET',
+            crossDomain: true,
+            success: function (data) {
+                debugger;
+            },
+            error: function (jqXHR, status, error) {
+                debugger;
+            }
+        });
     };
     AppComponent = __decorate([
         core_1.Component({

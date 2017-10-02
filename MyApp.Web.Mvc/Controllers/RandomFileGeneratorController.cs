@@ -18,7 +18,7 @@ namespace MyApp.Web.Mvc.Controllers
         [HttpGet]
         public async Task<ActionResult> GenerateRandomFiles(int numberOfFiles)
         {
-            string[] result = await this.randomFileCreator.CreateRandomFilesAsync(numberOfFiles);
+            FileMetadata[] result = await this.randomFileCreator.CreateRandomFilesAsync(numberOfFiles);
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 

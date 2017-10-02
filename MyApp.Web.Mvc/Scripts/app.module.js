@@ -16,6 +16,7 @@ var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var bar_component_1 = require("./Components/bar.component");
 var grid_component_1 = require("./Components/grid.component");
+var random_file_generator_component_1 = require("./Components/random.file.generator.component");
 var StandardReaderService_1 = require("./Services/StandardReaderService");
 var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
 var AppModule = /** @class */ (function () {
@@ -26,7 +27,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 bar_component_1.BarComponent,
-                grid_component_1.GridComponent
+                grid_component_1.GridComponent,
+                random_file_generator_component_1.RandomFileGeneratorComponent
             ],
             imports: [
                 /* Angular modules */
@@ -40,7 +42,9 @@ var AppModule = /** @class */ (function () {
                 primeng_1.ButtonModule,
                 primeng_1.ProgressBarModule,
                 primeng_1.GrowlModule,
-                primeng_1.DataGridModule
+                primeng_1.DataGridModule,
+                primeng_1.BlockUIModule,
+                primeng_1.PanelModule
             ],
             providers: [
                 StandardReaderService_1.StandardReaderService,

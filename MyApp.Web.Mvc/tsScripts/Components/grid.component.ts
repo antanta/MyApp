@@ -11,7 +11,7 @@ import { StandardReaderService } from '../Services/StandardReaderService'
 export class GridComponent implements OnInit {
     standards: Standard[] = [];
 
-    constructor(private standardReaderService: StandardReaderService) {//TODO insert service to read data
+    constructor(private standardReaderService: StandardReaderService) {
         /* The parameter simultaneously defines a private standardReaderService property and identifies it as a StandardReaderService injection site */
     }
 

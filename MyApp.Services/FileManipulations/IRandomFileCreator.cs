@@ -8,7 +8,7 @@ namespace MyApp.Services.FileManipulations
 {
     public interface IRandomFileCreator
     {
-        Task<string> CreateRandomFileAsync(string fileName, byte[][] content, bool convertToChar = true);
-        Task<string[]> CreateRandomFilesAsync(int numberOfFilesToCreate);
+        Task<FileMetadata> CreateRandomFileAsync(string fileName, byte[][] content, bool convertToChar = true);
+        Task<FileMetadata[]> CreateRandomFilesAsync(int numberOfFilesToCreate, int maxNumberOfFiles = 10);
     }
 }

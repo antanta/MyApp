@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileManipulations\FileMetadata.cs" />
     <Compile Include="FileManipulations\IRandomFileCreator.cs" />
     <Compile Include="FileManipulations\RandomFileCreator.cs" />
     <Compile Include="HashCalculations\HashCalculator.cs" />

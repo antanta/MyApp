@@ -18,8 +18,7 @@ namespace MyApp.SelfHostWebApi.Controllers
         [HttpGet]
         public async Task<IHttpActionResult> GenerateRandomFiles(int numberOfFiles)
         {
-            string[] result = new string[0];
-            //string[] result = await this.randomFileCreator.CreateRandomFilesAsync(numberOfFiles);
+            FileMetadata[] result = await this.randomFileCreator.CreateRandomFilesAsync(numberOfFiles);
             return Json(result);
         }
 

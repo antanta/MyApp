@@ -8,7 +8,7 @@ grid-component .ui-datagrid .ui-datagrid-header {
 }
 
 grid-component .ui-datagrid .ui-datagrid-content {
-	height: 198px;
+	min-height: 198px;
 }
 
 grid-component h3 {

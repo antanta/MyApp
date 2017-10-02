@@ -1,0 +1,12 @@
+﻿.file-upload-panel {
+    margin-top: 20px;
+}
+
+.file-upload-panel table td {
+    margin: 0;
+    padding-right: 10px;
+}
+
+    .file-upload-panel table td button {
+        margin-top: -6px;
+    }

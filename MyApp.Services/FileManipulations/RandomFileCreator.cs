@@ -17,7 +17,7 @@ namespace MyApp.Services.FileManipulations
         private const int bufferLength = 100;
         private const int rowCount = 100;
 
-        public async Task<string> CreateRandomFileAsync(string fileName, byte[][] content, bool convertToChar = true)
+        public async Task<FileMetadata> CreateRandomFileAsync(string fileName, byte[][] content, bool convertToChar = true)
         {
             string dataDir = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
             string fullFileName = dataDir + @"\\" + fileName;
@@ -46,21 +46,29 @@ namespace MyApp.Services.FileManipulations
                 lengthInBytes = sw.BaseStream.Length;
             }
 
-            return string.Format("File: {0}, length: {1}", fileName, lengthInBytes);
+            return new FileMetadata
+            {
+                Name = fileName,
+                Length = lengthInBytes
+            };
         }
 
-        public async Task<string[]> CreateRandomFilesAsync(int numberOfFilesToCreate)
+        public async Task<FileMetadata[]> CreateRandomFilesAsync(int numberOfFilesToCreate, int maxNumberOfFiles = 10)
         {
-            string[] result = new string[numberOfFilesToCreate];
+            if (numberOfFilesToCreate > maxNumberOfFiles)
+            {
+                numberOfFilesToCreate = maxNumberOfFiles;
+            }
+            FileMetadata[] result = new FileMetadata[numberOfFilesToCreate];
             Random rnd = new Random();
-            Task<string>[] tasks = new Task<string>[numberOfFilesToCreate];
+            Task<FileMetadata>[] tasks = new Task<FileMetadata>[numberOfFilesToCreate];
 
             // Creates random files
             for (int i = 0; i < numberOfFilesToCreate; i++)
             {
                 string fileName = string.Format("{0:D3}.txt", i);
 
-                tasks[i] = Task.Run<string>(async () =>
+                tasks[i] = Task.Run<FileMetadata>(async () =>
                 {
                     // Lock the generator so we do not have duplicated random values
                     byte[][] fileContent = new byte[rowCount][];
@@ -73,13 +81,13 @@ namespace MyApp.Services.FileManipulations
                         }
                     }
 
-                    var res = await CreateRandomFileAsync(fileName, fileContent, false);
+                    FileMetadata res = await CreateRandomFileAsync(fileName, fileContent, false);
                     return res;
                 });
             }
 
             //Wait for all task to complete
-            result = await Task.WhenAll<string>(tasks);
+            result = await Task.WhenAll<FileMetadata>(tasks);
             for (int i = 0; i < result.Length; i++)
             {
                 Debug.WriteLine(result[i]);

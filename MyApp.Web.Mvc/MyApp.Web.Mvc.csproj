@@ -275,8 +275,10 @@
     <None Include="Scripts\_references.js" />
     <Content Include="Styles\app.component.css" />
     <Content Include="Styles\Components\bar.component.css" />
+    <Content Include="Styles\Components\random.file.generator.component.css" />
     <Content Include="Templates\app.component.html" />
     <Content Include="Templates\Components\bar.component.html" />
+    <Content Include="Templates\Components\random.file.generator.component.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -342,6 +344,7 @@
     <TypeScriptCompile Include="tsScripts\app.module.ts" />
     <TypeScriptCompile Include="tsScripts\Components\bar.component.ts" />
     <TypeScriptCompile Include="tsScripts\Components\grid.component.ts" />
+    <TypeScriptCompile Include="tsScripts\Components\random.file.generator.component.ts" />
     <TypeScriptCompile Include="tsScripts\Domain\standard.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
     <TypeScriptCompile Include="tsScripts\Services\RandomFileGenerateService.ts" />

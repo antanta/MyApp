@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InputTextModule, ButtonModule, ProgressBarModule, GrowlModule, DataGridModule } from 'primeng/primeng';
+import { InputTextModule, ButtonModule, ProgressBarModule, GrowlModule, DataGridModule, BlockUIModule, PanelModule } from 'primeng/primeng';
 import { JsonpModule, HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BarComponent } from './Components/bar.component';
 import { GridComponent } from './Components/grid.component';
+import { RandomFileGeneratorComponent } from './Components/random.file.generator.component';
 
 import { StandardReaderService } from './Services/StandardReaderService'
 import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
@@ -17,7 +18,8 @@ import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
     declarations: [
         AppComponent,
         BarComponent,
-        GridComponent
+        GridComponent,
+        RandomFileGeneratorComponent
     ],
     imports: [
         /* Angular modules */
@@ -32,7 +34,9 @@ import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
         ButtonModule,
         ProgressBarModule,
         GrowlModule,
-        DataGridModule
+        DataGridModule,
+        BlockUIModule,
+        PanelModule
     ],
     providers: [
         StandardReaderService,

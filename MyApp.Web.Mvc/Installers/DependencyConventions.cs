@@ -4,6 +4,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using MyApp.Repository;
 using MyApp.Repository.EntityFramework;
+using MyApp.Services.FileManipulations;
 
 namespace MyApp.Web.Mvc.Installers
 {
@@ -16,6 +17,7 @@ namespace MyApp.Web.Mvc.Installers
                 .LifestyleTransient());
 
             container.Register(Component.For<IRepositoryCreator>().ImplementedBy<EntityFrameworkRepositoryCreator>());
+            container.Register(Component.For<IRandomFileCreator>().ImplementedBy<RandomFileCreator>());
         }
     }
 }

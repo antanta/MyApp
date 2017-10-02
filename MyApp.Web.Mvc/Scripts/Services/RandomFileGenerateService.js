@@ -11,26 +11,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-require("rxjs/add/operator/toPromise");
-var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
-var AppComponent = /** @class */ (function () {
-    function AppComponent(communicator, sender) {
-        this.sender = sender;
-        this.title = 'ASP.NET MVC 5 with Angular 4';
+//import 'rxjs/add/operator/map';
+require("rxjs/add/operator/toPromise"); //!!!
+var RandomFileGenerateService = /** @class */ (function () {
+    function RandomFileGenerateService(communicator) {
         this.communicator = communicator;
     }
-    AppComponent.prototype.onClick = function () {
-        this.message = 'Hello ' + this.name;
+    RandomFileGenerateService.prototype.generateRandomFiles = function (numberOfFiles) {
+        return this.communicator.get("/randomFileGenerator/GenerateRandomFiles?numberOfFiles=" + numberOfFiles)
+            .toPromise()
+            .then(function (res) {
+            return res.json();
+        })
+            .catch(function (res3) {
+            return res3;
+        });
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: '../Templates/app.component.html',
-            styleUrls: ['../Styles/app.component.css']
-        }),
-        __metadata("design:paramtypes", [http_1.Http, RandomFileGenerateService_1.RandomFileGenerateService])
-    ], AppComponent);
-    return AppComponent;
+    RandomFileGenerateService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http])
+    ], RandomFileGenerateService);
+    return RandomFileGenerateService;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.RandomFileGenerateService = RandomFileGenerateService;
+//# sourceMappingURL=RandomFileGenerateService.js.map

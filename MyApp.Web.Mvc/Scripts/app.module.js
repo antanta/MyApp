@@ -17,6 +17,7 @@ var app_component_1 = require("./app.component");
 var bar_component_1 = require("./Components/bar.component");
 var grid_component_1 = require("./Components/grid.component");
 var StandardReaderService_1 = require("./Services/StandardReaderService");
+var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -33,6 +34,7 @@ var AppModule = /** @class */ (function () {
                 animations_1.BrowserAnimationsModule,
                 forms_1.FormsModule,
                 http_1.JsonpModule,
+                http_1.HttpModule,
                 /* Primeng modules */
                 primeng_1.InputTextModule,
                 primeng_1.ButtonModule,
@@ -41,7 +43,8 @@ var AppModule = /** @class */ (function () {
                 primeng_1.DataGridModule
             ],
             providers: [
-                StandardReaderService_1.StandardReaderService
+                StandardReaderService_1.StandardReaderService,
+                RandomFileGenerateService_1.RandomFileGenerateService
             ],
             bootstrap: [app_component_1.AppComponent]
         })

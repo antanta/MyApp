@@ -29,9 +29,6 @@ namespace MyApp.SelfHostWebApi.Installers
             .LifestyleTransient()//the correct one
              );
 
-
-
-
             container.Register(Component.For<IRandomFileCreator>().ImplementedBy<RandomFileCreator>());
         }
     }

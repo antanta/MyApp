@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Http;
+using System.Web.Mvc;
 
-namespace MyApp.SelfHostWebApi.Controllers
+namespace MyApp.Web.Mvc.Controllers
 {
-    public class RandomFileGeneratorController : ApiController
+    public class RandomFileGeneratorController : Controller
     {
         public RandomFileGeneratorController(IRandomFileCreator randomFileCreator)
         {
@@ -16,11 +16,10 @@ namespace MyApp.SelfHostWebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IHttpActionResult> GenerateRandomFiles(int numberOfFiles)
+        public async Task<ActionResult> GenerateRandomFiles(int numberOfFiles)
         {
-            string[] result = new string[0];
-            //string[] result = await this.randomFileCreator.CreateRandomFilesAsync(numberOfFiles);
-            return Json(result);
+            string[] result = await this.randomFileCreator.CreateRandomFilesAsync(numberOfFiles);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
 
         #region Private members

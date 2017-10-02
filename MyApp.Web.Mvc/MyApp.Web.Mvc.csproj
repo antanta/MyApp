@@ -190,6 +190,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RandomFileGeneratorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -343,6 +344,7 @@
     <TypeScriptCompile Include="tsScripts\Components\grid.component.ts" />
     <TypeScriptCompile Include="tsScripts\Domain\standard.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
+    <TypeScriptCompile Include="tsScripts\Services\RandomFileGenerateService.ts" />
     <TypeScriptCompile Include="tsScripts\Services\StandardReaderService.ts" />
   </ItemGroup>
   <ItemGroup>

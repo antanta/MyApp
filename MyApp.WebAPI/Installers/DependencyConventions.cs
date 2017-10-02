@@ -5,6 +5,7 @@ using Castle.Windsor;
 using MyApp.Repository;
 using MyApp.Repository.EntityFramework;
 using System.Web.Http.Controllers;
+using MyApp.Services.FileManipulations;
 
 namespace MyApp.WebAPI.Installers
 {
@@ -17,6 +18,7 @@ namespace MyApp.WebAPI.Installers
             .LifestylePerWebRequest());
 
             container.Register(Component.For<IRepositoryCreator>().ImplementedBy<EntityFrameworkRepositoryCreator>());
+            container.Register(Component.For<IRandomFileCreator>().ImplementedBy<RandomFileCreator>());
         }
     }
 }

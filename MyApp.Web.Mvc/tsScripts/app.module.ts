@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule, ButtonModule, ProgressBarModule, GrowlModule, DataGridModule } from 'primeng/primeng';
-import { JsonpModule } from '@angular/http';
+import { JsonpModule, HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BarComponent } from './Components/bar.component';
 import { GridComponent } from './Components/grid.component';
 
 import { StandardReaderService } from './Services/StandardReaderService'
+import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { StandardReaderService } from './Services/StandardReaderService'
         BrowserAnimationsModule,
         FormsModule,
         JsonpModule,
+        HttpModule,
 
         /* Primeng modules */
         InputTextModule,
@@ -33,7 +35,8 @@ import { StandardReaderService } from './Services/StandardReaderService'
         DataGridModule
     ],
     providers: [
-        StandardReaderService
+        StandardReaderService,
+        RandomFileGenerateService
     ],
     bootstrap: [AppComponent]
 })

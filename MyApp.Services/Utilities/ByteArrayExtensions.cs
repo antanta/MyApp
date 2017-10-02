@@ -47,5 +47,15 @@ namespace MyApp.Services.Utilities
 
             return symbols;
         }
+        public static string ToNumberString(this byte[] arr)
+        {
+            StringBuilder sb = new StringBuilder("");
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sb.Append(arr[i]);
+            }
+            return sb.ToString();
+        }
     }
 }

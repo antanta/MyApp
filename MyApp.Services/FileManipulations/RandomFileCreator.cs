@@ -1,6 +1,7 @@
 ﻿using MyApp.Services.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,32 +15,38 @@ namespace MyApp.Services.FileManipulations
     public class RandomFileCreator : IRandomFileCreator
     {
         private const int bufferLength = 100;
+        private const int rowCount = 100;
 
-        public async Task<string> CreateRandomFileAsync(string fileName, byte[] content, bool convertToChar = true)
+        public async Task<string> CreateRandomFileAsync(string fileName, byte[][] content, bool convertToChar = true)
         {
-            Random rndgen = new Random();
+            string dataDir = AppDomain.CurrentDomain.GetData("DataDirectory").ToString();
+            string fullFileName = dataDir + @"\\" + fileName;
+            long lengthInBytes;
 
-            byte[] rndBuffer = new byte[bufferLength];
-            rndgen.NextBytes(rndBuffer);
-
-            using (FileStream fs = new FileStream(fileName, FileMode.CreateNew))
+            if (File.Exists(fullFileName))
+            {
+                File.Delete(fullFileName);
+            }
+            using (FileStream fs = new FileStream(fullFileName, FileMode.Create))
             using (StreamWriter sw = new StreamWriter(fs))
             {
-                if (convertToChar)
+                for (int i = 0; i < content.Length; i++)
                 {
-                    char[] charArr = rndBuffer.ToCharArray();
-                    await sw.WriteLineAsync(charArr);
+                    if (convertToChar)
+                    {
+                        await sw.WriteLineAsync(content[i].ToCharArray());
+                    }
+                    else
+                    {
+                        await sw.WriteLineAsync(content[i].ToNumberString());
+                    }
+
+                    await sw.FlushAsync();
                 }
-                else
-                {
-                    //TODO
-                    char[] charArr = rndBuffer.ToCharArray(' ');
-                    await sw.WriteLineAsync(charArr);
-                }
+                lengthInBytes = sw.BaseStream.Length;
             }
 
-            //TODO
-            return string.Format("some metadata for {0}", fileName);
+            return string.Format("File: {0}, length: {1}", fileName, lengthInBytes);
         }
 
         public async Task<string[]> CreateRandomFilesAsync(int numberOfFilesToCreate)
@@ -51,25 +58,32 @@ namespace MyApp.Services.FileManipulations
             // Creates random files
             for (int i = 0; i < numberOfFilesToCreate; i++)
             {
-                string fileName = DateTime.Now.Ticks.ToString() + ".txt";
-
+                string fileName = string.Format("{0:D3}.txt", i);
 
                 tasks[i] = Task.Run<string>(async () =>
                 {
-                    byte[] fileContent = new byte[bufferLength];
                     // Lock the generator so we do not have duplicated random values
+                    byte[][] fileContent = new byte[rowCount][];
                     lock (rnd)
                     {
-                        rnd.NextBytes(fileContent);
+                        for (int j = 0; j < rowCount; j++)
+                        {
+                            fileContent[j] = new byte[bufferLength];
+                            rnd.NextBytes(fileContent[j]);
+                        }
                     }
 
-                    var res = await CreateRandomFileAsync(fileName, fileContent);
+                    var res = await CreateRandomFileAsync(fileName, fileContent, false);
                     return res;
                 });
             }
 
             //Wait for all task to complete
             result = await Task.WhenAll<string>(tasks);
+            for (int i = 0; i < result.Length; i++)
+            {
+                Debug.WriteLine(result[i]);
+            }
 
             // From documentation: Await the completion of all the running tasks.  
             //int[] lengths = await Task.WhenAll(downloadTasks);

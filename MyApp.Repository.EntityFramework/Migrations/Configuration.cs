@@ -1,17 +1,17 @@
-using System;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
-
 namespace MyApp.Repository.EntityFramework.Migrations
 {
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
     internal sealed class Configuration : DbMigrationsConfiguration<MyApp.Repository.EntityFramework.MyAppContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "MyApp.Repository.EntityFramework.MyAppContext";
+            //ContextKey = "MyApp.Repository.EntityFramework.MyAppContext";
         }
 
         protected override void Seed(MyApp.Repository.EntityFramework.MyAppContext context)

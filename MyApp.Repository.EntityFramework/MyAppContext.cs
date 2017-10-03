@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
 using MyApp.Domain;
+using MyApp.Repository.EntityFramework.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,7 +14,7 @@ namespace MyApp.Repository.EntityFramework
     {
         public MyAppContext() : base("MyAppDBConnectionString", throwIfV1Schema: false)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyAppContext, MyApp.Repository.EntityFramework.Migrations.Configuration>("MyAppDBConnectionString"));
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<MyAppContext, Configuration>("MyAppDBConnectionString"));
         }
 
         public static MyAppContext Create()
@@ -23,6 +24,8 @@ namespace MyApp.Repository.EntityFramework
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Standard> Standards { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -32,6 +35,16 @@ namespace MyApp.Repository.EntityFramework
             modelBuilder.Entity<Standard>()
                     .Property(p => p.MaxNumberOfStudents)
                     .IsOptional();
+
+            //modelBuilder.Entity<Student>()
+            //    .HasMany<Course>(s => s.Courses)
+            //    .WithMany(c => c.Students)
+            //    .Map(cs =>
+            //    {
+            //        cs.MapLeftKey("StudentRefId");
+            //        cs.MapRightKey("CourseRefId");
+            //        cs.ToTable("StudentCourse");
+            //    });
         }
     }
 }

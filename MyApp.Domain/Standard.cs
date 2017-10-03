@@ -20,9 +20,9 @@ namespace MyApp.Domain
 
         public int? MaxNumberOfStudents { get; set; }
 
-        //public int ClassTeacherId { get; set; }
+        public int? ClassTeacherId { get; set; }
 
-        //[ForeignKey("ClassTeacherId")]
-        //public Teacher ClassTeacher { get; set; }
+        [ForeignKey("ClassTeacherId")]
+        public Teacher ClassTeacher { get; set; }
     }
 }

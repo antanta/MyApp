@@ -18,7 +18,7 @@ namespace MyApp.Domain
         [MaxLength(250)]
         public string Description { get; set; }
 
-        ICollection<Student> Students { get; set; }
+        public ICollection<Student> Students { get; set; }
 
         public int TeacherId { get; set; }
 

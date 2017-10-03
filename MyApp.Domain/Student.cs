@@ -27,7 +27,6 @@ namespace MyApp.Domain
         [ForeignKey("StandardId")]
         public virtual Standard Standard { get; set; }
 
-        //public ICollection<Course> Courses { get; set; }
+        public ICollection<Course> Courses { get; set; }
     }
-
 }

@@ -15,6 +15,6 @@ namespace MyApp.Domain
         [MaxLength(100)]
         public string Name { get; set; }
 
-        public Course DefaultCourse { get; set; }
+        public ICollection<Course> Courses { get; set; }
     }
 }

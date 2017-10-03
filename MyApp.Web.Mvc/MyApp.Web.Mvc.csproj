@@ -201,6 +201,11 @@
     <Compile Include="Plumbing\WindsorControllerFactory .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -291,8 +296,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -315,7 +318,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="tsScripts\tsconfig.json" />
-    <Content Include="Styles\Components\grid.component.css" />
+    <Content Include="Styles\Components\standards.component.css" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -341,11 +344,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
-    <Content Include="Templates\Components\grid.component.html" />
+    <Content Include="Templates\Components\standards.component.html" />
     <TypeScriptCompile Include="tsScripts\app.component.ts" />
     <TypeScriptCompile Include="tsScripts\app.module.ts" />
     <TypeScriptCompile Include="tsScripts\Components\bar.component.ts" />
-    <TypeScriptCompile Include="tsScripts\Components\grid.component.ts" />
+    <TypeScriptCompile Include="tsScripts\Components\standards.component.ts" />
     <TypeScriptCompile Include="tsScripts\Components\random.file.generator.component.ts" />
     <TypeScriptCompile Include="tsScripts\Domain\standard.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
@@ -358,6 +361,13 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>MyApp.Web.Mvc.Resources</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

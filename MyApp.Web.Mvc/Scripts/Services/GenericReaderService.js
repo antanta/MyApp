@@ -11,39 +11,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
-//import 'rxjs/add/operator/map';
-require("rxjs/add/operator/toPromise"); //!!!
-var StandardReaderService = /** @class */ (function () {
-    function StandardReaderService(communicator) {
+require("rxjs/add/operator/toPromise");
+var GenericReaderService = /** @class */ (function () {
+    function GenericReaderService(communicator) {
+        debugger;
         this.communicator = communicator;
     }
-    StandardReaderService.prototype.getStandards = function () {
-        return this.communicator.get("http://localhost:62901/api/standard?callback=JSONP_CALLBACK")
+    GenericReaderService.prototype.getEntities = function () {
+        debugger;
+        return this.communicator.get("http://localhost:62901/api/" + this.className + "?callback=JSONP_CALLBACK")
             .toPromise()
             .then(function (res) {
             return res.json();
         });
     };
-    StandardReaderService.prototype.getStandardsjQuery = function () {
-        var that = this;
-        $.ajax({
-            url: 'http://localhost:62901/api/standard',
-            dataType: 'jsonp',
-            type: 'GET',
-            crossDomain: true,
-            success: function (data) {
-                that.standards = data;
-            },
-            error: function (jqXHR, status, error) {
-                alert('error');
-            }
-        });
-    };
-    StandardReaderService = __decorate([
+    GenericReaderService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Jsonp])
-    ], StandardReaderService);
-    return StandardReaderService;
+    ], GenericReaderService);
+    return GenericReaderService;
 }());
-exports.StandardReaderService = StandardReaderService;
-//# sourceMappingURL=StandardReaderService.js.map
+exports.GenericReaderService = GenericReaderService;
+//# sourceMappingURL=GenericReaderService.js.map

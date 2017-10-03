@@ -10,7 +10,6 @@ namespace MyApp.Domain
 {
     public class Standard
     {
-        [Key]
         public int Id { get; set; }
 
         [MaxLength(100), Required]

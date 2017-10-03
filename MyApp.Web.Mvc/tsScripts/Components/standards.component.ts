@@ -1,23 +1,16 @@
 ﻿import { OnInit, Component, ViewEncapsulation } from '@angular/core';
 import { Standard } from '../Domain/standard'
-import { StandardReaderService } from '../Services/StandardReaderService'
+import { EntityComponentBase } from './entity.component.base';
+import { GenericReaderService } from '../Services/GenericReaderService';
 
 @Component({
-    selector: 'grid-component',
-    templateUrl: '../Templates/Components/grid.component.html',
-    styleUrls: ['../Styles/Components/grid.component.css'],
+    selector: 'standards-component',
+    templateUrl: '../Templates/Components/standards.component.html',
+    styleUrls: ['../Styles/Components/entity.component.base.css'],
     encapsulation: ViewEncapsulation.None
 })
-export class GridComponent implements OnInit {
-    standards: Standard[] = [];
-
-    constructor(private standardReaderService: StandardReaderService) {
-        /* The parameter simultaneously defines a private standardReaderService property and identifies it as a StandardReaderService injection site */
-    }
-
-    ngOnInit() {
-        this.standardReaderService
-            .getStandards()
-            .then(standards => this.standards = standards);
+export class StandardsComponent extends EntityComponentBase<Standard> implements OnInit {
+    constructor(readerService: GenericReaderService<Standard>) {
+        super(readerService, 'Standard');
     }
 }

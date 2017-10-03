@@ -15,10 +15,11 @@ var primeng_1 = require("primeng/primeng");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var bar_component_1 = require("./Components/bar.component");
-var grid_component_1 = require("./Components/grid.component");
-var random_file_generator_component_1 = require("./Components/random.file.generator.component");
-var StandardReaderService_1 = require("./Services/StandardReaderService");
+var standards_component_1 = require("./Components/standards.component");
+var students_component_1 = require("./Components/students.component");
+var GenericReaderService_1 = require("./Services/GenericReaderService");
 var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
+var random_file_generator_component_1 = require("./Components/random.file.generator.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -27,7 +28,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 bar_component_1.BarComponent,
-                grid_component_1.GridComponent,
+                standards_component_1.StandardsComponent,
+                students_component_1.StudentsComponent,
                 random_file_generator_component_1.RandomFileGeneratorComponent
             ],
             imports: [
@@ -47,7 +49,7 @@ var AppModule = /** @class */ (function () {
                 primeng_1.PanelModule
             ],
             providers: [
-                StandardReaderService_1.StandardReaderService,
+                GenericReaderService_1.GenericReaderService,
                 RandomFileGenerateService_1.RandomFileGenerateService
             ],
             bootstrap: [app_component_1.AppComponent]

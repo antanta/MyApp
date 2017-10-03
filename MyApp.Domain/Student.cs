@@ -10,10 +10,8 @@ namespace MyApp.Domain
 {
     public class Student
     {
-        public Student() { }
-
         [Key]
-        public int StudentId { get; set; }
+        public int Id { get; set; }
 
         [MaxLength(100)]
         public string Name { get; set; }
@@ -22,6 +20,7 @@ namespace MyApp.Domain
 
         public int StandardId { get; set; }
 
+        [MaxLength(300)]
         public string StudentQuestion { get; set; }
 
         [ForeignKey("StandardId")]

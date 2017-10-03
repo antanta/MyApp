@@ -8,17 +8,21 @@ import { JsonpModule, HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BarComponent } from './Components/bar.component';
-import { GridComponent } from './Components/grid.component';
-import { RandomFileGeneratorComponent } from './Components/random.file.generator.component';
 
-import { StandardReaderService } from './Services/StandardReaderService'
+import { StandardsComponent } from './Components/standards.component';
+import { StudentsComponent } from './Components/students.component';
+
+import { GenericReaderService } from './Services/GenericReaderService'
 import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
+
+import { RandomFileGeneratorComponent } from './Components/random.file.generator.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         BarComponent,
-        GridComponent,
+        StandardsComponent,
+        StudentsComponent,
         RandomFileGeneratorComponent
     ],
     imports: [
@@ -39,7 +43,7 @@ import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
         PanelModule
     ],
     providers: [
-        StandardReaderService,
+        GenericReaderService,
         RandomFileGenerateService
     ],
     bootstrap: [AppComponent]

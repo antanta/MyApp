@@ -1,1 +1,1 @@
-[] Extend the domain with new entities
+- [ ] Extend the domain with new entities

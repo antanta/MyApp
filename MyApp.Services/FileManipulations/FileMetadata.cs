@@ -13,9 +13,6 @@ namespace MyApp.Services.FileManipulations
         /// Length of file in bytes
         /// </summary>
         public long Length { get; set; }
-        /// <summary>
-        /// TODO
-        /// </summary>
         public string Path { get; set; }
     }
 }

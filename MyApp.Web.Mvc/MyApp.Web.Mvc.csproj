@@ -188,6 +188,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RandomFileGeneratorController.cs" />
@@ -318,6 +319,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Download\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj">
@@ -347,6 +349,7 @@
     <TypeScriptCompile Include="tsScripts\Components\random.file.generator.component.ts" />
     <TypeScriptCompile Include="tsScripts\Domain\standard.ts" />
     <TypeScriptCompile Include="tsScripts\main.ts" />
+    <TypeScriptCompile Include="tsScripts\Services\FileMetadata.ts" />
     <TypeScriptCompile Include="tsScripts\Services\RandomFileGenerateService.ts" />
     <TypeScriptCompile Include="tsScripts\Services\StandardReaderService.ts" />
   </ItemGroup>

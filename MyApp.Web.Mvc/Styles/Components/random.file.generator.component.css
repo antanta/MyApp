@@ -10,3 +10,15 @@
     .file-upload-panel table td button {
         margin-top: -6px;
     }
+
+/* Primeng overrides - BEGIN */
+
+.ui-panel-titlebar {
+    display: none;
+}
+
+.ui-panel {
+    margin-top: 20px;
+}
+
+/* Primeng overrides - END */

@@ -1,31 +1,31 @@
 ﻿<p-blockUI [blocked]="blockedDocument" [target]="pnl">
-    <i class="fa fa-lock fa-5x" style="position:absolute;top:25%;left:50%"></i>
+    <i class="fa fa-lock fa-5x" style="position:absolute;top:25%;left:calc(50% - 40px)"></i>
 </p-blockUI>
 <p-panel #pnl>
     <div class="panel panel-default file-upload-panel">
-    <div class="panel-body">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs12">
-                <table>
-                    <tr>
-                        <td>
-                            <input type="text" class="form-control" placeholder="Number of files fo generate" [(ngModel)]="numberOfFiles">
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary" (click)="onGenerateClick()">Generate</button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col-lg-6 col-md-6 col-xs-12">
-                <h4>Files created:</h4>
-                <ul>
-                    <li *ngFor="let file of filesMetadata; let i = index">
-                        <a href="{{file.Path}}/#">{{ file.Name }}</a>
-                    </li>
-                </ul>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs12">
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="text" class="form-control" placeholder="Number of files fo generate" [(ngModel)]="numberOfFiles">
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-primary" (click)="onGenerateClick()">Generate</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <h4>Files created:</h4>
+                    <ul>
+                        <li *ngFor="let file of filesMetadata; let i = index">
+                            <a href="{{file.Path}}">{{ file.Name }}</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </p-panel>

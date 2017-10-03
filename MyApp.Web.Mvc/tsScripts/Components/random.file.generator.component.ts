@@ -1,6 +1,7 @@
 ﻿import { OnInit, Component, ViewEncapsulation } from '@angular/core';
 import { RandomFileGenerateService } from '../Services/RandomFileGenerateService';
 import { PanelModule } from 'primeng/components/panel/panel';
+import { FileMetadata } from '../Services/FileMetadata';
 
 @Component({
     selector: 'random-file-generator-component-component',
@@ -12,7 +13,7 @@ export class RandomFileGeneratorComponent {
     blockedDocument: boolean = false;
     private maxNumberOfFiles: number = 10;
     private numberOfFiles: string;
-    private filesMetadata: string[];
+    private filesMetadata: FileMetadata[];
 
     constructor(private randomFileGenerateService: RandomFileGenerateService) {
     }
@@ -35,7 +36,7 @@ export class RandomFileGeneratorComponent {
         this.randomFileGenerateService
             .generateRandomFiles(num)
             .then(function (res) {
-                that.filesMetadata = res;
+                that.filesMetadata = <FileMetadata[]>res;
                 that.blockedDocument = false;
             });        
     }

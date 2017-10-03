@@ -1,12 +1,13 @@
 MyApp
+====================
 
 Overview
-=============
+---------------
 
 This is my app. It is for learning new things and implementing them together.
 
 Technologies
-================
+---------------
 - .Net Framework 4.6.1
 - ASP.NET MVC 5
 - ASP.NET Web API 2 (incl. one with OWIN self host)
@@ -19,7 +20,7 @@ Technologies
 - TypeScript 2.5.2
 
 Patterns
-================
--Repository
--IoC (Dependency injections)
--Factory
+---------------
+- Repository
+- IoC (Dependency injections)
+- Factory

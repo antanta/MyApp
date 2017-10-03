@@ -1,1 +1,1 @@
-- Add class for file metadata, incl. hyperlink for download. Integrate with the UI.
+[] Extend the domain with new entities

@@ -5,7 +5,7 @@ TODO
 - [x] Add class for file metadata, incl. hyperlink for download. Integrate with the UI.
 - [x] Extend the domain with new entities
 - [x] Implement routing
-- [ ] Add fancy loader
+- [x] Add fancy loader
 - [ ] Add CRUD operations for entities
 - [ ] Add Tools menu -> hash/random file generation
 - [ ] Create the hash service

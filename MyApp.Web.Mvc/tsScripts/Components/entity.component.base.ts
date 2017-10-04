@@ -7,10 +7,8 @@ export class EntityComponentBase<T> implements OnInit {
     protected entities: T[] = [];
     protected readerService: GenericReaderService<T>;
 
-    constructor(readerService: GenericReaderService<T>, className: string) {
-        debugger;
+    constructor(readerService: GenericReaderService<T>) {
         this.readerService = readerService;
-        this.readerService.className = className;
     }
 
     ngOnInit() {

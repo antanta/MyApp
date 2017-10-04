@@ -22,10 +22,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var entity_component_base_1 = require("./entity.component.base");
 var GenericReaderService_1 = require("../Services/GenericReaderService");
+var StudentReader = /** @class */ (function (_super) {
+    __extends(StudentReader, _super);
+    function StudentReader() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    StudentReader = __decorate([
+        core_1.Injectable()
+    ], StudentReader);
+    return StudentReader;
+}(GenericReaderService_1.GenericReaderService));
+exports.StudentReader = StudentReader;
 var StudentsComponent = /** @class */ (function (_super) {
     __extends(StudentsComponent, _super);
     function StudentsComponent(readerService) {
-        return _super.call(this, readerService, 'Student') || this;
+        return _super.call(this, readerService) || this;
     }
     StudentsComponent = __decorate([
         core_1.Component({
@@ -34,7 +45,7 @@ var StudentsComponent = /** @class */ (function (_super) {
             styleUrls: ['../Styles/Components/entity.component.base.css'],
             encapsulation: core_1.ViewEncapsulation.None
         }),
-        __metadata("design:paramtypes", [GenericReaderService_1.GenericReaderService])
+        __metadata("design:paramtypes", [StudentReader])
     ], StudentsComponent);
     return StudentsComponent;
 }(entity_component_base_1.EntityComponentBase));

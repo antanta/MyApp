@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6AD40CC-074E-4CA4-9B42-B130A2C430B9}"
 	ProjectSection(SolutionItems) = preProject
 		connections.config = connections.config
+		initial_data.sql = initial_data.sql
 		LICENSE.md = LICENSE.md
 		links.html = links.html
 		README.md = README.md

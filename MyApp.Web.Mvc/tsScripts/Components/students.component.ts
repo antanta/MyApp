@@ -1,7 +1,12 @@
-﻿import { OnInit, Component, ViewEncapsulation } from '@angular/core';
+﻿import { OnInit, Component, ViewEncapsulation, Injectable } from '@angular/core';
 import { Student } from '../Domain/student'
 import { EntityComponentBase } from './entity.component.base';
 import { GenericReaderService } from '../Services/GenericReaderService';
+
+@Injectable()
+export class StudentReader extends GenericReaderService<Student> {
+
+}
 
 @Component({
     selector: 'students-component',
@@ -10,7 +15,7 @@ import { GenericReaderService } from '../Services/GenericReaderService';
     encapsulation: ViewEncapsulation.None
 })
 export class StudentsComponent extends EntityComponentBase<Student> implements OnInit {
-    constructor(readerService: GenericReaderService<Student>) {
-        super(readerService, 'Student');
+    constructor(readerService: StudentReader) {
+        super(readerService);
     }
 }

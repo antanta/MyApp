@@ -14,16 +14,25 @@ var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
 var GenericReaderService = /** @class */ (function () {
     function GenericReaderService(communicator) {
-        debugger;
         this.communicator = communicator;
     }
     GenericReaderService.prototype.getEntities = function () {
-        debugger;
-        return this.communicator.get("http://localhost:62901/api/" + this.className + "?callback=JSONP_CALLBACK")
+        return this.communicator.get("http://localhost:62901/api/" + this.className() + "?callback=JSONP_CALLBACK")
             .toPromise()
             .then(function (res) {
             return res.json();
         });
+    };
+    GenericReaderService.prototype.className = function () {
+        var myString = this.constructor.name;
+        var myRegexp = /^(.*?)(?:Reader)$/g;
+        var match = myRegexp.exec(myString);
+        if (match.length > 1) {
+            return match[1];
+        }
+        else {
+            throw Error("Invalid implementation for GenericReaderService<T>");
+        }
     };
     GenericReaderService = __decorate([
         core_1.Injectable(),

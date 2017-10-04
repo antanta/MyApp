@@ -18,20 +18,9 @@ namespace MyApp.Domain
         [MaxLength(250)]
         public string Description { get; set; }
 
-        public ICollection<Student> Students { get; set; }
-
         public int TeacherId { get; set; }
-
-        [ForeignKey("TeacherId")]
         public Teacher Teacher { get; set; }
 
-        //Read only
-        public int TotalStudents
-        {
-            get
-            {
-                return this.Students.Count;
-            }
-        }
+        public ICollection<Student> Students { get; set; }
     }
 }

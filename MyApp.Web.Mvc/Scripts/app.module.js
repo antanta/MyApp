@@ -17,7 +17,6 @@ var app_component_1 = require("./app.component");
 var bar_component_1 = require("./Components/bar.component");
 var standards_component_1 = require("./Components/standards.component");
 var students_component_1 = require("./Components/students.component");
-var GenericReaderService_1 = require("./Services/GenericReaderService");
 var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
 var random_file_generator_component_1 = require("./Components/random.file.generator.component");
 var AppModule = /** @class */ (function () {
@@ -49,7 +48,8 @@ var AppModule = /** @class */ (function () {
                 primeng_1.PanelModule
             ],
             providers: [
-                GenericReaderService_1.GenericReaderService,
+                standards_component_1.StandardReader,
+                students_component_1.StudentReader,
                 RandomFileGenerateService_1.RandomFileGenerateService
             ],
             bootstrap: [app_component_1.AppComponent]

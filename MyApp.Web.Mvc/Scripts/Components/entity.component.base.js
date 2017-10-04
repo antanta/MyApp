@@ -1,11 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var EntityComponentBase = /** @class */ (function () {
-    function EntityComponentBase(readerService, className) {
+    function EntityComponentBase(readerService) {
         this.entities = [];
-        debugger;
         this.readerService = readerService;
-        this.readerService.className = className;
     }
     EntityComponentBase.prototype.ngOnInit = function () {
         var that = this;

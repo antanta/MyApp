@@ -5,20 +5,28 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class GenericReaderService<T> {
     private communicator: Jsonp;
-    public className: string;
 
     constructor(communicator: Jsonp) {
-        debugger;
         this.communicator = communicator;
     }
 
     getEntities(): Promise<T[]> {
-        debugger;
-        return this.communicator.get("http://localhost:62901/api/" + this.className + "?callback=JSONP_CALLBACK")
+        return this.communicator.get("http://localhost:62901/api/" + this.className() + "?callback=JSONP_CALLBACK")
             .toPromise()
             .then(res => {
                 return res.json() as T[]
             });
+    }
+
+    private className(): string {
+        var myString = this.constructor.name;
+        var myRegexp = /^(.*?)(?:Reader)$/g;
+        var match = myRegexp.exec(myString);
+        if (match.length > 1) {//TODO
+            return match[1];
+        } else {
+            throw Error("Invalid implementation for GenericReaderService<T>");
+        }
     }
 
     //TODO API for CUD

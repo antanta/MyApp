@@ -18,13 +18,11 @@ namespace MyApp.Domain
 
         public int? Age { get; set; }
 
-        public int StandardId { get; set; }
-
         [MaxLength(300)]
         public string StudentQuestion { get; set; }
 
-        [ForeignKey("StandardId")]
-        public virtual Standard Standard { get; set; }
+        public int StandardId { get; set; }
+        public Standard Standard { get; set; }
 
         public ICollection<Course> Courses { get; set; }
     }

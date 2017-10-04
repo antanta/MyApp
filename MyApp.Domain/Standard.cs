@@ -15,13 +15,11 @@ namespace MyApp.Domain
         [MaxLength(100), Required]
         public string Name { get; set; }
         
-        public IList<Student> Students { get; set; }
-
         public int? MaxNumberOfStudents { get; set; }
 
-        public int? ClassTeacherId { get; set; }
+        public int? TeacherId { get; set; }
+        public Teacher Teacher { get; set; }
 
-        [ForeignKey("ClassTeacherId")]
-        public Teacher ClassTeacher { get; set; }
+        public ICollection<Student> Students { get; set; }
     }
 }

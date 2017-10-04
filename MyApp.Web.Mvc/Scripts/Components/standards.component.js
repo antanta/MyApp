@@ -22,10 +22,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var entity_component_base_1 = require("./entity.component.base");
 var GenericReaderService_1 = require("../Services/GenericReaderService");
+var StandardReader = /** @class */ (function (_super) {
+    __extends(StandardReader, _super);
+    function StandardReader() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    StandardReader = __decorate([
+        core_1.Injectable()
+    ], StandardReader);
+    return StandardReader;
+}(GenericReaderService_1.GenericReaderService));
+exports.StandardReader = StandardReader;
 var StandardsComponent = /** @class */ (function (_super) {
     __extends(StandardsComponent, _super);
     function StandardsComponent(readerService) {
-        return _super.call(this, readerService, 'Standard') || this;
+        return _super.call(this, readerService) || this;
     }
     StandardsComponent = __decorate([
         core_1.Component({
@@ -34,7 +45,7 @@ var StandardsComponent = /** @class */ (function (_super) {
             styleUrls: ['../Styles/Components/entity.component.base.css'],
             encapsulation: core_1.ViewEncapsulation.None
         }),
-        __metadata("design:paramtypes", [GenericReaderService_1.GenericReaderService])
+        __metadata("design:paramtypes", [StandardReader])
     ], StandardsComponent);
     return StandardsComponent;
 }(entity_component_base_1.EntityComponentBase));

@@ -19,6 +19,8 @@ var home_component_1 = require("./Components/home.component");
 var menu_component_1 = require("./Components/menu.component");
 var standards_component_1 = require("./Components/standards.component");
 var students_component_1 = require("./Components/students.component");
+var teachers_component_1 = require("./Components/teachers.component");
+var courses_component_1 = require("./Components/courses.component");
 var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
 var random_file_generator_component_1 = require("./Components/random.file.generator.component");
 var router_1 = require("@angular/router");
@@ -30,11 +32,13 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                bar_component_1.BarComponent,
                 home_component_1.HomeComponent,
                 menu_component_1.MenuComponent,
                 standards_component_1.StandardsComponent,
                 students_component_1.StudentsComponent,
+                teachers_component_1.TeachersComponent,
+                courses_component_1.CoursesComponent,
+                bar_component_1.BarComponent,
                 random_file_generator_component_1.RandomFileGeneratorComponent
             ],
             imports: [
@@ -56,8 +60,11 @@ var AppModule = /** @class */ (function () {
                 router_1.RouterModule.forRoot(routing_configuration_1.routingConfiguration, { useHash: true })
             ],
             providers: [
+                /* Reader service implementations */
                 standards_component_1.StandardReader,
                 students_component_1.StudentReader,
+                teachers_component_1.TeacherReader,
+                courses_component_1.CourseReader,
                 RandomFileGenerateService_1.RandomFileGenerateService
             ],
             bootstrap: [app_component_1.AppComponent]

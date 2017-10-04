@@ -14,6 +14,8 @@ import { MenuComponent } from './Components/menu.component';
 
 import { StandardsComponent, StandardReader } from './Components/standards.component';
 import { StudentsComponent, StudentReader } from './Components/students.component';
+import { TeachersComponent, TeacherReader } from './Components/teachers.component'
+import { CoursesComponent, CourseReader } from './Components/courses.component'
 
 import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
 import { RandomFileGeneratorComponent } from './Components/random.file.generator.component';
@@ -24,11 +26,15 @@ import { routingConfiguration } from './routing.configuration';
 @NgModule({
     declarations: [
         AppComponent,
-        BarComponent,
         HomeComponent,
         MenuComponent,
+
         StandardsComponent,
         StudentsComponent,
+        TeachersComponent,
+        CoursesComponent,
+
+        BarComponent,
         RandomFileGeneratorComponent
     ],
     imports: [
@@ -52,8 +58,11 @@ import { routingConfiguration } from './routing.configuration';
         RouterModule.forRoot(routingConfiguration, { useHash: true })
     ],
     providers: [
+        /* Reader service implementations */
         StandardReader,
         StudentReader,
+        TeacherReader,
+        CourseReader,
 
         RandomFileGenerateService
     ],

@@ -6,8 +6,8 @@ TODO
 - [x] Extend the domain with new entities
 - [x] Implement routing
 - [x] Add fancy loader
+- [x] Add Tools menu & random file generation service
 - [ ] Add CRUD operations for entities
-- [ ] Add Tools menu -> hash/random file generation
 - [ ] Create the hash service
 - [ ] Add registration and roles logic
 - [ ] Add i18n

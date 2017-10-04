@@ -1,0 +1,8 @@
+﻿<p-dataGrid [value]="entities" [paginator]="true" [rows]="10">
+    <p-header>List of Courses</p-header>
+    <ng-template let-current pTemplate="item">
+        <div class="ui-g-12 ui-md-3">
+           {{current.Id}} - {{current.Name}} - {{current.Description}}
+        </div>
+    </ng-template>
+</p-dataGrid>

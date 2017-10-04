@@ -15,10 +15,14 @@ var primeng_1 = require("primeng/primeng");
 var http_1 = require("@angular/http");
 var app_component_1 = require("./app.component");
 var bar_component_1 = require("./Components/bar.component");
+var home_component_1 = require("./Components/home.component");
+var menu_component_1 = require("./Components/menu.component");
 var standards_component_1 = require("./Components/standards.component");
 var students_component_1 = require("./Components/students.component");
 var RandomFileGenerateService_1 = require("./Services/RandomFileGenerateService");
 var random_file_generator_component_1 = require("./Components/random.file.generator.component");
+var router_1 = require("@angular/router");
+var routing_configuration_1 = require("./routing.configuration");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -27,6 +31,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 bar_component_1.BarComponent,
+                home_component_1.HomeComponent,
+                menu_component_1.MenuComponent,
                 standards_component_1.StandardsComponent,
                 students_component_1.StudentsComponent,
                 random_file_generator_component_1.RandomFileGeneratorComponent
@@ -45,7 +51,9 @@ var AppModule = /** @class */ (function () {
                 primeng_1.GrowlModule,
                 primeng_1.DataGridModule,
                 primeng_1.BlockUIModule,
-                primeng_1.PanelModule
+                primeng_1.PanelModule,
+                /* Application routing */
+                router_1.RouterModule.forRoot(routing_configuration_1.routingConfiguration, { useHash: true })
             ],
             providers: [
                 standards_component_1.StandardReader,

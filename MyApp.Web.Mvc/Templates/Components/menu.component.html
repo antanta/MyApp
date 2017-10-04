@@ -1,0 +1,27 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" [routerLink]="['home']">My App</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['students']">Students</a></li>
+                <li class="nav-item" [routerLinkActive]="['active']"><a class="nav-link" [routerLink]="['standards']">Standards</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Teachers</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tools <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link" href="#">Create Random Files</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Compute Hash Codes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

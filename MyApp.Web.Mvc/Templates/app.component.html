@@ -1,10 +1,13 @@
-﻿<h1>{{title}}</h1>
-
-<standards-component></standards-component>
-
-<students-component></students-component>
-
-<!--<random-file-generator-component-component></random-file-generator-component-component>
-
-<bar-component></bar-component>-->
+﻿<menu-component></menu-component>
+<div class="container body-content">
+    <div class="jumbotron">
+        <div class="m-t-1">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <footer>
+        <hr />
+        <p>&copy; {{currentYear}} - My app - Angel Nikolov</p>
+    </footer>
+</div>
 

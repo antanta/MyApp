@@ -22,7 +22,7 @@ export class GenericReaderService<T> {
         var myString = this.constructor.name;
         var myRegexp = /^(.*?)(?:Reader)$/g;
         var match = myRegexp.exec(myString);
-        if (match.length > 1) {//TODO
+        if (match.length > 1) {
             return match[1];
         } else {
             throw Error("Invalid implementation for GenericReaderService<T>");

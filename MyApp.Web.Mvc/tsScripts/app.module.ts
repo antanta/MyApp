@@ -9,16 +9,24 @@ import { JsonpModule, HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BarComponent } from './Components/bar.component';
 
+import { HomeComponent } from './Components/home.component';
+import { MenuComponent } from './Components/menu.component';
+
 import { StandardsComponent, StandardReader } from './Components/standards.component';
 import { StudentsComponent, StudentReader } from './Components/students.component';
 
 import { RandomFileGenerateService } from './Services/RandomFileGenerateService'
 import { RandomFileGeneratorComponent } from './Components/random.file.generator.component';
 
+import { Routes, RouterModule } from "@angular/router";
+import { routingConfiguration } from './routing.configuration';
+
 @NgModule({
     declarations: [
         AppComponent,
         BarComponent,
+        HomeComponent,
+        MenuComponent,
         StandardsComponent,
         StudentsComponent,
         RandomFileGeneratorComponent
@@ -38,7 +46,10 @@ import { RandomFileGeneratorComponent } from './Components/random.file.generator
         GrowlModule,
         DataGridModule,
         BlockUIModule,
-        PanelModule
+        PanelModule,
+
+        /* Application routing */
+        RouterModule.forRoot(routingConfiguration, { useHash: true })
     ],
     providers: [
         StandardReader,
